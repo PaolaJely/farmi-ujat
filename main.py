@@ -1,5 +1,14 @@
 import flet as ft
+import consulta_airtable as cat
+
+
 def main(page: ft.Page):
+
+    def mostrar_interacciones(e: ft.ControlEvent):
+        page.clean()
+        cat.main(page)
+        
+
     page. title = "FARMI-UJAT"
     page.appbar = ft.AppBar(
         title = ft.Text("FARMI-UJAT", size=40),
@@ -24,7 +33,8 @@ def main(page: ft.Page):
         ),
         bgcolor="GREEN200",
         color="black",
-        width=200
+        width=200,
+        on_click=mostrar_interacciones
     )
 
     btn_medicamento = ft.FilledButton(
@@ -86,6 +96,6 @@ def main(page: ft.Page):
     page.update()
     #nuevo medicamento y listado de medicamentos
 
-
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+if __name__ == "__main__":
+    ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 #flet tun -w main.py
