@@ -1,5 +1,6 @@
 import flet as ft
 import consulta_airtable as cat
+import consultas as cm
 
 
 def main(page: ft.Page):
@@ -7,9 +8,13 @@ def main(page: ft.Page):
     def mostrar_interacciones(e: ft.ControlEvent):
         page.clean()
         cat.main(page)
+
+    def mostrar_medicamentos(e: ft.ControlEvent):
+        page.clean()
+        cm.main(page)
         
 
-    page. title = "FARMI-UJAT"
+    page.title = "FARMI-UJAT"
     page.appbar = ft.AppBar(
         title = ft.Text("FARMI-UJAT", size=40),
         center_title=True
@@ -76,7 +81,8 @@ def main(page: ft.Page):
         ),
         bgcolor="GREEN400",
         color="black",
-        width=200
+        width=200,
+        on_click=mostrar_medicamentos
     )
 
     btn_container = ft.Container(
