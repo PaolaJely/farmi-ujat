@@ -1,7 +1,9 @@
+import os
 import peewee as pw
 
-# Conexión a la base de datos
-farmacia_ujat = pw.SqliteDatabase('farmacia_ujat.db')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, 'farmacia_ujat.db')
+farmacia_ujat = pw.SqliteDatabase(db_path)  # Usa esta siempre
 
 # Definir la tabla 'farmaco'
 class Farmaco(pw.Model):
@@ -32,6 +34,4 @@ class Medicamento(pw.Model):
 farmacia_ujat.connect()
 print("Conexión exitosa")
 
-farmaco = Farmaco.get(Farmaco.nombre == "Acarbosa")
-print("Farmaco encontrado:", farmaco.nombre, farmaco.descripcion)
 
