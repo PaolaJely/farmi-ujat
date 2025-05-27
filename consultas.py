@@ -1,5 +1,5 @@
 import flet as ft
-import modelo_examen as md
+import modelo as md
 
 def main(page: ft.Page):
 #Configuara pagina
