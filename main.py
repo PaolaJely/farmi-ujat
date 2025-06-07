@@ -1,6 +1,7 @@
 import flet as ft
 import consulta_airtable as cat
 import consultas as cm
+import alta_medicamentos as am
 
 
 def main(page: ft.Page):
@@ -10,8 +11,14 @@ def main(page: ft.Page):
         cat.main(page)
 
     def mostrar_medicamentos(e: ft.ControlEvent):
-        page.clean()
-        cm.main(page)
+        pass
+        #page.clean()
+        #cm.main(page)
+
+    def agregar_medicamento(e: ft.ControlEvent):
+        pass
+        #page.clean()
+        #am.main(page)
         
 
     page.title = "FARMI-UJAT"
@@ -60,7 +67,8 @@ def main(page: ft.Page):
         ),
         bgcolor="GREEN300",
         color="black",
-        width=200
+        width=200,
+        on_click=agregar_medicamento
     )
 
     btn_lista = ft.FilledButton(
