@@ -12,13 +12,13 @@ def main(page: ft.Page):
 
     def mostrar_medicamentos(e: ft.ControlEvent):
         pass
-        #page.clean()
-        #cm.main(page)
+        page.clean()
+        cm.main(page)
 
     def agregar_medicamento(e: ft.ControlEvent):
         pass
-        #page.clean()
-        #am.main(page)
+        page.clean()
+        am.main(page)
         
 
     page.title = "FARMI-UJAT"
